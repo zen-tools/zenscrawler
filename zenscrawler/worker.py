@@ -90,7 +90,7 @@ class PageParser(object):
             encoding = 'iso-8859-1'
 
         # Check for content-type
-        if mime_type != self.match_content:
+        if not mime_type or mime_type != self.match_content:
             return []
 
         r_body = buffer.getvalue().decode(encoding)
